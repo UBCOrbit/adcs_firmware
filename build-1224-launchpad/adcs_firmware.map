@@ -1,7 +1,7 @@
 ******************************************************************************
                   TI ARM Linker PC v16.9.6                     
 ******************************************************************************
->> Linked Sat Jun 15 15:37:27 2019
+>> Linked Sat Jun 15 16:23:15 2019
 
 OUTPUT FILE NAME:   <adcs_firmware.out>
 ENTRY POINT SYMBOL: "_c_int00"  address: 00005db4
@@ -14,7 +14,7 @@ MEMORY CONFIGURATION
   VECTORS               00000000   00000020  00000020  00000000     X
   FLASH0                00000020   0013ffe0  00006984  0013965c  R  X
   STACKS                08000000   00001500  00000000  00001500  RW  
-  RAM                   08001500   0002eb00  00000014  0002eaec  RW  
+  RAM                   08001500   0002eb00  00000814  0002e2ec  RW  
 
 
 SEGMENT ALLOCATION MAP
@@ -26,8 +26,9 @@ run origin  load origin   length   init length attrs members
   00000020    00000020    00006764   00006764    r-x .text
   00006784    00006784    00000200   00000200    r-- .const
   00006988    00006988    00000020   00000020    r-- .cinit
-08001500    08001500    00000014   00000000    rw-
-  08001500    08001500    00000014   00000000    rw- .data
+08001500    08001500    00000814   00000000    rw-
+  08001500    08001500    00000800   00000000    rw- .sysmem
+  08001d00    08001d00    00000014   00000000    rw- .data
 
 
 SECTION ALLOCATION MAP
@@ -73,9 +74,13 @@ section   page    origin      length       input sections
                   00006998    00000008     (__TI_handler_table)
                   000069a0    00000008     (__TI_cinit_table)
 
-.data      0    08001500    00000014     UNINITIALIZED
-                  08001500    0000000c     rtsv7R4_T_be_v3D16_eabi.lib : exit.obj (.data:$O1$$)
-                  0800150c    00000008                                 : _lock.obj (.data:$O1$$)
+.sysmem    0    08001500    00000800     UNINITIALIZED
+                  08001500    00000008     rtsv7R4_T_be_v3D16_eabi.lib : memory.obj (.sysmem)
+                  08001508    000007f8     --HOLE--
+
+.data      0    08001d00    00000014     UNINITIALIZED
+                  08001d00    0000000c     rtsv7R4_T_be_v3D16_eabi.lib : exit.obj (.data:$O1$$)
+                  08001d0c    00000008                                 : _lock.obj (.data:$O1$$)
 
 MODULE SUMMARY
 
@@ -111,15 +116,16 @@ MODULE SUMMARY
     +--+--------------------------+-------+---------+---------+
        Total:                     568     0         20     
                                                            
+       Heap:                      0       0         2048   
        Linker Generated:          0       31        0      
     +--+--------------------------+-------+---------+---------+
-       Grand Total:               26500   543       20     
+       Grand Total:               26500   543       2068   
 
 
 LINKER GENERATED COPY TABLES
 
 __TI_cinit_table @ 000069a0 records: 1, size/record: 8, table size: 8
-	.data: load addr=00006988, load size=0000000f bytes, run addr=08001500, run size=00000014 bytes, compression=lzss
+	.data: load addr=00006988, load size=0000000f bytes, run addr=08001d00, run size=00000014 bytes, compression=lzss
 
 
 LINKER GENERATED HANDLER TABLE
@@ -136,6 +142,7 @@ address   name
 000066b5  C$$EXIT                             
 UNDEFED   SHT$$INIT_ARRAY$$Base               
 UNDEFED   SHT$$INIT_ARRAY$$Limit              
+00000800  __SYSMEM_SIZE                       
 000069a0  __TI_CINIT_Base                     
 000069a8  __TI_CINIT_Limit                    
 00006998  __TI_Handler_Table_Base             
@@ -143,11 +150,11 @@ UNDEFED   SHT$$INIT_ARRAY$$Limit
 00005ae0  __TI_PINIT_Base                     
 00005ae4  __TI_PINIT_Limit                    
 000065d9  __TI_auto_init                      
-08001500  __TI_cleanup_ptr                    
+08001d00  __TI_cleanup_ptr                    
 00006649  __TI_decompress_lzss                
 00006765  __TI_decompress_none                
-08001504  __TI_dtors_ptr                      
-08001508  __TI_enable_exit_profile_output     
+08001d04  __TI_dtors_ptr                      
+08001d08  __TI_enable_exit_profile_output     
 ffffffff  __TI_pprof_out_hndl                 
 ffffffff  __TI_prof_data_size                 
 ffffffff  __TI_prof_data_start                
@@ -193,7 +200,7 @@ ffffffff  __c_args__
 00005a38  _esmCcmErrorsClear_                 
 000058f4  _getCPSRValue_                      
 000058fc  _gotoCPUIdle_                       
-0800150c  _lock                               
+08001d0c  _lock                               
 0000675f  _nop                                
 000064b8  _pmuDisableCountersGlobal_          
 000064a8  _pmuEnableCountersGlobal_           
@@ -209,8 +216,9 @@ ffffffff  __c_args__
 00006500  _pmuStopCounters_                   
 00006757  _register_lock                      
 00006751  _register_unlock                    
+08001500  _sys_memory                         
 00006773  _system_post_cinit                  
-08001510  _unlock                             
+08001d10  _unlock                             
 000066b9  abort                               
 0000126c  adc1ParityCheck                     
 00001358  adc2ParityCheck                     
@@ -360,6 +368,7 @@ address   name
 000006e8  efcStuckZeroTest                    
 00000794  efcSelfTest                         
 000007bc  checkefcSelfTest                    
+00000800  __SYSMEM_SIZE                       
 0000085c  fmcBus2Check                        
 00000898  fmcECCcheck                         
 00000938  checkB0RAMECC                       
@@ -534,11 +543,12 @@ address   name
 000069a0  __TI_CINIT_Base                     
 000069a0  __TI_Handler_Table_Limit            
 000069a8  __TI_CINIT_Limit                    
-08001500  __TI_cleanup_ptr                    
-08001504  __TI_dtors_ptr                      
-08001508  __TI_enable_exit_profile_output     
-0800150c  _lock                               
-08001510  _unlock                             
+08001500  _sys_memory                         
+08001d00  __TI_cleanup_ptr                    
+08001d04  __TI_dtors_ptr                      
+08001d08  __TI_enable_exit_profile_output     
+08001d0c  _lock                               
+08001d10  _unlock                             
 ffffffff  __TI_pprof_out_hndl                 
 ffffffff  __TI_prof_data_size                 
 ffffffff  __TI_prof_data_start                
@@ -548,4 +558,4 @@ ffffffff  binit
 UNDEFED   SHT$$INIT_ARRAY$$Base               
 UNDEFED   SHT$$INIT_ARRAY$$Limit              
 
-[204 symbols]
+[206 symbols]

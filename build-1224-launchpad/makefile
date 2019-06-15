@@ -11,6 +11,7 @@ GEN_CMDS__FLAG :=
 
 ORDERED_OBJS += \
 "./adcs/hardware-drivers/magnetorquers/magnetorquers.obj" \
+"./adcs/hardware-drivers/temperature/temp_stts75.obj" \
 "./platform-1224-launchpad/source/adc.obj" \
 "./platform-1224-launchpad/source/can.obj" \
 "./platform-1224-launchpad/source/crc.obj" \
@@ -44,6 +45,13 @@ ORDERED_OBJS += \
 "./platform-1224-launchpad/source/sys_startup.obj" \
 "./platform-1224-launchpad/source/sys_vim.obj" \
 "./platform-1224-launchpad/source/system.obj" \
+"./third-party/matrix_math/fix16.obj" \
+"./third-party/matrix_math/fixarray.obj" \
+"./third-party/matrix_math/fixmatrix.obj" \
+"./third-party/matrix_math/fixquat.obj" \
+"./third-party/matrix_math/fixstring.obj" \
+"./third-party/matrix_math/fixvector2d.obj" \
+"./third-party/matrix_math/fixvector3d.obj" \
 "../platform-1224-launchpad/source/sys_link.cmd" \
 $(GEN_CMDS__FLAG) \
 -lrtsv7R4_T_be_v3D16_eabi.lib \
@@ -56,9 +64,13 @@ RMDIR := RMDIR /S/Q
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include adcs/hardware-drivers/magnetorquers/subdir_vars.mk
+-include adcs/hardware-drivers/temperature/subdir_vars.mk
 -include platform-1224-launchpad/source/subdir_vars.mk
+-include third-party/matrix_math/subdir_vars.mk
 -include adcs/hardware-drivers/magnetorquers/subdir_rules.mk
+-include adcs/hardware-drivers/temperature/subdir_rules.mk
 -include platform-1224-launchpad/source/subdir_rules.mk
+-include third-party/matrix_math/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -189,10 +201,10 @@ adcs_firmware.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "adcs\hardware-drivers\magnetorquers\magnetorquers.obj" "platform-1224-launchpad\source\adc.obj" "platform-1224-launchpad\source\can.obj" "platform-1224-launchpad\source\crc.obj" "platform-1224-launchpad\source\dabort.obj" "platform-1224-launchpad\source\dcc.obj" "platform-1224-launchpad\source\ecap.obj" "platform-1224-launchpad\source\eqep.obj" "platform-1224-launchpad\source\errata_SSWF021_45.obj" "platform-1224-launchpad\source\esm.obj" "platform-1224-launchpad\source\etpwm.obj" "platform-1224-launchpad\source\gio.obj" "platform-1224-launchpad\source\het.obj" "platform-1224-launchpad\source\i2c.obj" "platform-1224-launchpad\source\lin.obj" "platform-1224-launchpad\source\mibspi.obj" "platform-1224-launchpad\source\notification.obj" "platform-1224-launchpad\source\pinmux.obj" "platform-1224-launchpad\source\rti.obj" "platform-1224-launchpad\source\sci.obj" "platform-1224-launchpad\source\spi.obj" "platform-1224-launchpad\source\sys_core.obj" "platform-1224-launchpad\source\sys_dma.obj" 
-	-$(RM) "platform-1224-launchpad\source\sys_intvecs.obj" "platform-1224-launchpad\source\sys_main.obj" "platform-1224-launchpad\source\sys_mpu.obj" "platform-1224-launchpad\source\sys_pcr.obj" "platform-1224-launchpad\source\sys_phantom.obj" "platform-1224-launchpad\source\sys_pmm.obj" "platform-1224-launchpad\source\sys_pmu.obj" "platform-1224-launchpad\source\sys_selftest.obj" "platform-1224-launchpad\source\sys_startup.obj" "platform-1224-launchpad\source\sys_vim.obj" "platform-1224-launchpad\source\system.obj" 
-	-$(RM) "adcs\hardware-drivers\magnetorquers\magnetorquers.d" "platform-1224-launchpad\source\adc.d" "platform-1224-launchpad\source\can.d" "platform-1224-launchpad\source\crc.d" "platform-1224-launchpad\source\dcc.d" "platform-1224-launchpad\source\ecap.d" "platform-1224-launchpad\source\eqep.d" "platform-1224-launchpad\source\errata_SSWF021_45.d" "platform-1224-launchpad\source\esm.d" "platform-1224-launchpad\source\etpwm.d" "platform-1224-launchpad\source\gio.d" "platform-1224-launchpad\source\het.d" "platform-1224-launchpad\source\i2c.d" "platform-1224-launchpad\source\lin.d" "platform-1224-launchpad\source\mibspi.d" "platform-1224-launchpad\source\notification.d" "platform-1224-launchpad\source\pinmux.d" "platform-1224-launchpad\source\rti.d" "platform-1224-launchpad\source\sci.d" "platform-1224-launchpad\source\spi.d" "platform-1224-launchpad\source\sys_dma.d" "platform-1224-launchpad\source\sys_main.d" "platform-1224-launchpad\source\sys_pcr.d" "platform-1224-launchpad\source\sys_phantom.d" 
-	-$(RM) "platform-1224-launchpad\source\sys_pmm.d" "platform-1224-launchpad\source\sys_selftest.d" "platform-1224-launchpad\source\sys_startup.d" "platform-1224-launchpad\source\sys_vim.d" "platform-1224-launchpad\source\system.d" 
+	-$(RM) "adcs\hardware-drivers\magnetorquers\magnetorquers.obj" "adcs\hardware-drivers\temperature\temp_stts75.obj" "platform-1224-launchpad\source\adc.obj" "platform-1224-launchpad\source\can.obj" "platform-1224-launchpad\source\crc.obj" "platform-1224-launchpad\source\dabort.obj" "platform-1224-launchpad\source\dcc.obj" "platform-1224-launchpad\source\ecap.obj" "platform-1224-launchpad\source\eqep.obj" "platform-1224-launchpad\source\errata_SSWF021_45.obj" "platform-1224-launchpad\source\esm.obj" "platform-1224-launchpad\source\etpwm.obj" "platform-1224-launchpad\source\gio.obj" "platform-1224-launchpad\source\het.obj" "platform-1224-launchpad\source\i2c.obj" "platform-1224-launchpad\source\lin.obj" "platform-1224-launchpad\source\mibspi.obj" "platform-1224-launchpad\source\notification.obj" "platform-1224-launchpad\source\pinmux.obj" "platform-1224-launchpad\source\rti.obj" "platform-1224-launchpad\source\sci.obj" "platform-1224-launchpad\source\spi.obj" "platform-1224-launchpad\source\sys_core.obj" 
+	-$(RM) "platform-1224-launchpad\source\sys_dma.obj" "platform-1224-launchpad\source\sys_intvecs.obj" "platform-1224-launchpad\source\sys_main.obj" "platform-1224-launchpad\source\sys_mpu.obj" "platform-1224-launchpad\source\sys_pcr.obj" "platform-1224-launchpad\source\sys_phantom.obj" "platform-1224-launchpad\source\sys_pmm.obj" "platform-1224-launchpad\source\sys_pmu.obj" "platform-1224-launchpad\source\sys_selftest.obj" "platform-1224-launchpad\source\sys_startup.obj" "platform-1224-launchpad\source\sys_vim.obj" "platform-1224-launchpad\source\system.obj" "third-party\matrix_math\fix16.obj" "third-party\matrix_math\fixarray.obj" "third-party\matrix_math\fixmatrix.obj" "third-party\matrix_math\fixquat.obj" "third-party\matrix_math\fixstring.obj" "third-party\matrix_math\fixvector2d.obj" "third-party\matrix_math\fixvector3d.obj" 
+	-$(RM) "adcs\hardware-drivers\magnetorquers\magnetorquers.d" "adcs\hardware-drivers\temperature\temp_stts75.d" "platform-1224-launchpad\source\adc.d" "platform-1224-launchpad\source\can.d" "platform-1224-launchpad\source\crc.d" "platform-1224-launchpad\source\dcc.d" "platform-1224-launchpad\source\ecap.d" "platform-1224-launchpad\source\eqep.d" "platform-1224-launchpad\source\errata_SSWF021_45.d" "platform-1224-launchpad\source\esm.d" "platform-1224-launchpad\source\etpwm.d" "platform-1224-launchpad\source\gio.d" "platform-1224-launchpad\source\het.d" "platform-1224-launchpad\source\i2c.d" "platform-1224-launchpad\source\lin.d" "platform-1224-launchpad\source\mibspi.d" "platform-1224-launchpad\source\notification.d" "platform-1224-launchpad\source\pinmux.d" "platform-1224-launchpad\source\rti.d" "platform-1224-launchpad\source\sci.d" "platform-1224-launchpad\source\spi.d" "platform-1224-launchpad\source\sys_dma.d" "platform-1224-launchpad\source\sys_main.d" "platform-1224-launchpad\source\sys_pcr.d" 
+	-$(RM) "platform-1224-launchpad\source\sys_phantom.d" "platform-1224-launchpad\source\sys_pmm.d" "platform-1224-launchpad\source\sys_selftest.d" "platform-1224-launchpad\source\sys_startup.d" "platform-1224-launchpad\source\sys_vim.d" "platform-1224-launchpad\source\system.d" "third-party\matrix_math\fix16.d" "third-party\matrix_math\fixarray.d" "third-party\matrix_math\fixmatrix.d" "third-party\matrix_math\fixquat.d" "third-party\matrix_math\fixstring.d" "third-party\matrix_math\fixvector2d.d" "third-party\matrix_math\fixvector3d.d" 
 	-$(RM) "platform-1224-launchpad\source\dabort.d" "platform-1224-launchpad\source\sys_core.d" "platform-1224-launchpad\source\sys_intvecs.d" "platform-1224-launchpad\source\sys_mpu.d" "platform-1224-launchpad\source\sys_pmu.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
