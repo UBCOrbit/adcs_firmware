@@ -301,7 +301,7 @@ int16_t stts75_obc_temp_test_no_rtos(uint8_t addr) {
 	int16_t temp;
 	temp = stts75_read_temp_raw(addr);
 	if (temp <= -20000) {
-		sfu_reset_i2c(i2cREG1);
+//		sfu_reset_i2c(i2cREG1);
 	}
 	return temp;
 }
