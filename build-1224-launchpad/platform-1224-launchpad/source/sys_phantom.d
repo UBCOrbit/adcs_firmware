@@ -1,17 +1,17 @@
 # FIXED
 
 platform-1224-launchpad/source/sys_phantom.obj: ../platform-1224-launchpad/source/sys_phantom.c
-platform-1224-launchpad/source/sys_phantom.obj: M:/aspectu-adcs-firmware/adcs_firmware/platform-1224-launchpad/include/sys_common.h
-platform-1224-launchpad/source/sys_phantom.obj: M:/aspectu-adcs-firmware/adcs_firmware/platform-1224-launchpad/include/hal_stdtypes.h
-platform-1224-launchpad/source/sys_phantom.obj: M:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stdint.h
-platform-1224-launchpad/source/sys_phantom.obj: M:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stdbool.h
-platform-1224-launchpad/source/sys_phantom.obj: M:/aspectu-adcs-firmware/adcs_firmware/platform-1224-launchpad/include/sys_vim.h
-platform-1224-launchpad/source/sys_phantom.obj: M:/aspectu-adcs-firmware/adcs_firmware/platform-1224-launchpad/include/reg_vim.h
+platform-1224-launchpad/source/sys_phantom.obj: C:/Users/Anoush\ Sepehri/aspectu-adcs-firmware/adcs_firmware/platform-1224-launchpad/include/sys_common.h
+platform-1224-launchpad/source/sys_phantom.obj: C:/Users/Anoush\ Sepehri/aspectu-adcs-firmware/adcs_firmware/platform-1224-launchpad/include/hal_stdtypes.h
+platform-1224-launchpad/source/sys_phantom.obj: C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stdint.h
+platform-1224-launchpad/source/sys_phantom.obj: C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stdbool.h
+platform-1224-launchpad/source/sys_phantom.obj: C:/Users/Anoush\ Sepehri/aspectu-adcs-firmware/adcs_firmware/platform-1224-launchpad/include/sys_vim.h
+platform-1224-launchpad/source/sys_phantom.obj: C:/Users/Anoush\ Sepehri/aspectu-adcs-firmware/adcs_firmware/platform-1224-launchpad/include/reg_vim.h
 
 ../platform-1224-launchpad/source/sys_phantom.c: 
-M:/aspectu-adcs-firmware/adcs_firmware/platform-1224-launchpad/include/sys_common.h: 
-M:/aspectu-adcs-firmware/adcs_firmware/platform-1224-launchpad/include/hal_stdtypes.h: 
-M:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stdint.h: 
-M:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stdbool.h: 
-M:/aspectu-adcs-firmware/adcs_firmware/platform-1224-launchpad/include/sys_vim.h: 
-M:/aspectu-adcs-firmware/adcs_firmware/platform-1224-launchpad/include/reg_vim.h: 
+C:/Users/Anoush\ Sepehri/aspectu-adcs-firmware/adcs_firmware/platform-1224-launchpad/include/sys_common.h: 
+C:/Users/Anoush\ Sepehri/aspectu-adcs-firmware/adcs_firmware/platform-1224-launchpad/include/hal_stdtypes.h: 
+C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stdint.h: 
+C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stdbool.h: 
+C:/Users/Anoush\ Sepehri/aspectu-adcs-firmware/adcs_firmware/platform-1224-launchpad/include/sys_vim.h: 
+C:/Users/Anoush\ Sepehri/aspectu-adcs-firmware/adcs_firmware/platform-1224-launchpad/include/reg_vim.h: 
