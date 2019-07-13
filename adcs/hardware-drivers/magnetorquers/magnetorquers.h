@@ -2,7 +2,7 @@
  * magnetorquers.h
  *
  *  Created on: Jun 15, 2019
- *      Author: Mel
+ *      Author: Anoush
  */
 
 #ifndef MAGNETORQUERS_MAGNETORQUERS_H_
