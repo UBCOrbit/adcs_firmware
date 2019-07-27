@@ -1,7 +1,7 @@
 ;-------------------------------------------------------------------------------
 ; sys_intvecs.asm
 ;
-; Copyright (C) 2009-2018 Texas Instruments Incorporated - www.ti.com 
+; Copyright (C) 2009-2016 Texas Instruments Incorporated - www.ti.com 
 ; 
 ; 
 ;  Redistribution and use in source and binary forms, with or without 
@@ -42,6 +42,7 @@
 ; import reference for interrupt routines
 
     .ref _c_int00
+    .ref vPortSWI
     .ref _dabort
     .ref phantomInterrupt
     .def resetEntry
@@ -53,8 +54,7 @@ resetEntry
         b   _c_int00
 undefEntry
         b   undefEntry
-svcEntry
-        b   svcEntry
+        b   vPortSWI
 prefetchEntry
         b   prefetchEntry
         b   _dabort

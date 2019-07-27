@@ -6,6 +6,8 @@
  */
 
 #include "temp_stts75.h"
+#include "FreeRTOS.h"
+#include "os_semphr.h"
 #include "i2c.h"
 #include "reg_i2c.h"
 
@@ -42,9 +44,24 @@ int8_t stts75_write_reg(uint8_t reg, uint8_t* data, uint16_t len) {
 
 int16_t stts75_read_temp(uint8_t addr) {
 
-		int16_t temp = 0;
+//    if (xSemaphoreTake(xI2CMutex, pdMS_TO_TICKS(500) ) == pdTRUE) {
+//            int16_t temp;
+//            temp = stts75_read_temp_raw(addr);
+//            if (temp <= -20000) {
+//    //          sfu_reset_i2c(i2cREG1);
+//            }
+//            xSemaphoreGive(xI2CMutex);
+//            return temp;
+//        } else {
+//            serial_send_ln("Temp read can't get mutex");
+//
+//    //      xSemaphoreGive(xI2CMutex);
+//            return TEMP_READ_ERROR;
+//    }
 
-		return temp;
+    int16_t temp = 0;
+
+    return temp;
 
 
 }

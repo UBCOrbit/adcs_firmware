@@ -1,7 +1,7 @@
 ;-------------------------------------------------------------------------------
 ; sys_core.asm
 ;
-; Copyright (C) 2009-2018 Texas Instruments Incorporated - www.ti.com
+; Copyright (C) 2009-2016 Texas Instruments Incorporated - www.ti.com
 ;
 ;
 ;  Redistribution and use in source and binary forms, with or without
@@ -160,12 +160,12 @@ _coreInitStackPointer_
         ldr   sp,       userSp
         bx    lr
 
-userSp  .word 0x08000000+0x00001000
-svcSp   .word 0x08000000+0x00001000+0x00000100
-fiqSp   .word 0x08000000+0x00001000+0x00000100+0x00000100
-irqSp   .word 0x08000000+0x00001000+0x00000100+0x00000100+0x00000100
-abortSp .word 0x08000000+0x00001000+0x00000100+0x00000100+0x00000100+0x00000100
-undefSp .word 0x08000000+0x00001000+0x00000100+0x00000100+0x00000100+0x00000100+0x00000100
+userSp  .word 0x08000000+0x00000300
+svcSp   .word 0x08000000+0x00000300+0x00000100
+fiqSp   .word 0x08000000+0x00000300+0x00000100+0x00000100
+irqSp   .word 0x08000000+0x00000300+0x00000100+0x00000100+0x00000100
+abortSp .word 0x08000000+0x00000300+0x00000100+0x00000100+0x00000100+0x00000100
+undefSp .word 0x08000000+0x00000300+0x00000100+0x00000100+0x00000100+0x00000100+0x00000100
 
     .endasmfunc
 

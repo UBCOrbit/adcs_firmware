@@ -113,6 +113,8 @@ PDE_DEPS__QUOTED :=
 SUBDIRS := \
 adcs/hardware-drivers/magnetorquers \
 adcs/hardware-drivers/temperature \
+adcs/interfaces \
+adcs/system \
 platform-1224-launchpad/source \
 third-party/matrix_math \
 

@@ -38,8 +38,6 @@ platform-1224-launchpad/source/notification.obj: C:/Users/aless/Documents/UBC\ O
 platform-1224-launchpad/source/notification.obj: C:/Users/aless/Documents/UBC\ Orbit/ADCS_Firm/adcs_firmware/platform-1224-launchpad/include/reg_sci.h
 platform-1224-launchpad/source/notification.obj: C:/Users/aless/Documents/UBC\ Orbit/ADCS_Firm/adcs_firmware/platform-1224-launchpad/include/spi.h
 platform-1224-launchpad/source/notification.obj: C:/Users/aless/Documents/UBC\ Orbit/ADCS_Firm/adcs_firmware/platform-1224-launchpad/include/reg_spi.h
-platform-1224-launchpad/source/notification.obj: C:/Users/aless/Documents/UBC\ Orbit/ADCS_Firm/adcs_firmware/platform-1224-launchpad/include/rti.h
-platform-1224-launchpad/source/notification.obj: C:/Users/aless/Documents/UBC\ Orbit/ADCS_Firm/adcs_firmware/platform-1224-launchpad/include/reg_rti.h
 platform-1224-launchpad/source/notification.obj: C:/Users/aless/Documents/UBC\ Orbit/ADCS_Firm/adcs_firmware/platform-1224-launchpad/include/dcc.h
 platform-1224-launchpad/source/notification.obj: C:/Users/aless/Documents/UBC\ Orbit/ADCS_Firm/adcs_firmware/platform-1224-launchpad/include/reg_dcc.h
 platform-1224-launchpad/source/notification.obj: C:/Users/aless/Documents/UBC\ Orbit/ADCS_Firm/adcs_firmware/platform-1224-launchpad/include/i2c.h
@@ -93,8 +91,6 @@ C:/Users/aless/Documents/UBC\ Orbit/ADCS_Firm/adcs_firmware/platform-1224-launch
 C:/Users/aless/Documents/UBC\ Orbit/ADCS_Firm/adcs_firmware/platform-1224-launchpad/include/reg_sci.h: 
 C:/Users/aless/Documents/UBC\ Orbit/ADCS_Firm/adcs_firmware/platform-1224-launchpad/include/spi.h: 
 C:/Users/aless/Documents/UBC\ Orbit/ADCS_Firm/adcs_firmware/platform-1224-launchpad/include/reg_spi.h: 
-C:/Users/aless/Documents/UBC\ Orbit/ADCS_Firm/adcs_firmware/platform-1224-launchpad/include/rti.h: 
-C:/Users/aless/Documents/UBC\ Orbit/ADCS_Firm/adcs_firmware/platform-1224-launchpad/include/reg_rti.h: 
 C:/Users/aless/Documents/UBC\ Orbit/ADCS_Firm/adcs_firmware/platform-1224-launchpad/include/dcc.h: 
 C:/Users/aless/Documents/UBC\ Orbit/ADCS_Firm/adcs_firmware/platform-1224-launchpad/include/reg_dcc.h: 
 C:/Users/aless/Documents/UBC\ Orbit/ADCS_Firm/adcs_firmware/platform-1224-launchpad/include/i2c.h: 

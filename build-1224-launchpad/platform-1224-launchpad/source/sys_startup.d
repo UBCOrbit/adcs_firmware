@@ -31,7 +31,6 @@ platform-1224-launchpad/source/sys_startup.obj: C:/Users/aless/Documents/UBC\ Or
 platform-1224-launchpad/source/sys_startup.obj: C:/Users/aless/Documents/UBC\ Orbit/ADCS_Firm/adcs_firmware/platform-1224-launchpad/include/reg_htu.h
 platform-1224-launchpad/source/sys_startup.obj: C:/Users/aless/Documents/UBC\ Orbit/ADCS_Firm/adcs_firmware/platform-1224-launchpad/include/esm.h
 platform-1224-launchpad/source/sys_startup.obj: C:/Users/aless/Documents/UBC\ Orbit/ADCS_Firm/adcs_firmware/platform-1224-launchpad/include/reg_esm.h
-platform-1224-launchpad/source/sys_startup.obj: C:/Users/aless/Documents/UBC\ Orbit/ADCS_Firm/adcs_firmware/platform-1224-launchpad/include/errata_SSWF021_45.h
 
 ../platform-1224-launchpad/source/sys_startup.c: 
 C:/Users/aless/Documents/UBC\ Orbit/ADCS_Firm/adcs_firmware/platform-1224-launchpad/include/sys_common.h: 
@@ -64,4 +63,3 @@ C:/Users/aless/Documents/UBC\ Orbit/ADCS_Firm/adcs_firmware/platform-1224-launch
 C:/Users/aless/Documents/UBC\ Orbit/ADCS_Firm/adcs_firmware/platform-1224-launchpad/include/reg_htu.h: 
 C:/Users/aless/Documents/UBC\ Orbit/ADCS_Firm/adcs_firmware/platform-1224-launchpad/include/esm.h: 
 C:/Users/aless/Documents/UBC\ Orbit/ADCS_Firm/adcs_firmware/platform-1224-launchpad/include/reg_esm.h: 
-C:/Users/aless/Documents/UBC\ Orbit/ADCS_Firm/adcs_firmware/platform-1224-launchpad/include/errata_SSWF021_45.h: 

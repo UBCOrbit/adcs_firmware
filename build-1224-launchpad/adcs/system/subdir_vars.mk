@@ -6,27 +6,21 @@ SHELL = cmd.exe
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../adcs/system/adcs_cmds.c \
-../adcs/system/adcs_startup.c 
+../adcs/system/blinky.c 
 
 C_DEPS += \
-./adcs/system/adcs_cmds.d \
-./adcs/system/adcs_startup.d 
+./adcs/system/blinky.d 
 
 OBJS += \
-./adcs/system/adcs_cmds.obj \
-./adcs/system/adcs_startup.obj 
+./adcs/system/blinky.obj 
 
 OBJS__QUOTED += \
-"adcs\system\adcs_cmds.obj" \
-"adcs\system\adcs_startup.obj" 
+"adcs\system\blinky.obj" 
 
 C_DEPS__QUOTED += \
-"adcs\system\adcs_cmds.d" \
-"adcs\system\adcs_startup.d" 
+"adcs\system\blinky.d" 
 
 C_SRCS__QUOTED += \
-"../adcs/system/adcs_cmds.c" \
-"../adcs/system/adcs_startup.c" 
+"../adcs/system/blinky.c" 
 
 

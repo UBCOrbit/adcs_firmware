@@ -1,12 +1,12 @@
 /** @file lin.c 
 *   @brief LIN Driver Implementation File
-*   @date 11-Dec-2018
-*   @version 04.07.01
+*   @date 07-July-2017
+*   @version 04.07.00
 *
 */
 
 /* 
-* Copyright (C) 2009-2018 Texas Instruments Incorporated - www.ti.com 
+* Copyright (C) 2009-2016 Texas Instruments Incorporated - www.ti.com 
 * 
 * 
 *  Redistribution and use in source and binary forms, with or without 
@@ -88,10 +88,9 @@ void linInit(void)
     *     - Enable/Disable parity
     *     - Disable data length control in ID4 and ID5
     */
-    linREG->GCR1 |= 0x03000C40U 
+    linREG->GCR1 |= 0x03000C60U 
                  | (uint32)((uint32)1U << 12U)
-                 | (uint32)((uint32)0U << 2U)
-				 | (uint32)((uint32)1U << 5U);
+                 | (uint32)((uint32)0U << 2U);
 					
     /** - Setup maximum baud rate prescaler */
     linREG->MBRSR = (uint32)3600U;
