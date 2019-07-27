@@ -1,7 +1,7 @@
 ******************************************************************************
                   TI ARM Linker PC v16.9.6                     
 ******************************************************************************
->> Linked Sat Jul 27 15:05:40 2019
+>> Linked Sat Jul 27 15:55:46 2019
 
 OUTPUT FILE NAME:   <adcs_firmware.out>
 ENTRY POINT SYMBOL: "_c_int00"  address: 0000e7c0
@@ -13,7 +13,7 @@ MEMORY CONFIGURATION
 ----------------------  --------  ---------  --------  --------  ----  --------
   VECTORS               00000000   00000020  00000020  00000000     X
   KERNEL                00000020   00008000  00005a74  0000258c  R  X
-  FLASH0                00008020   00137fe0  000079ac  00130634  R  X
+  FLASH0                00008020   00137fe0  000079b4  0013062c  R  X
   STACKS                08000000   00000800  00000000  00000800  RW  
   KRAM                  08000800   00000800  00000104  000006fc  RW  
   RAM                   08001000   0002f000  00002038  0002cfc8  RW  
@@ -30,9 +30,9 @@ run origin  load origin   length   init length attrs members
   00005238    00005238    00000800   00000000    rw- .sysmem
 00005a38    00005a38    00000060   00000060    r--
   00005a38    00005a38    00000060   00000060    r-- .cinit
-00008020    00008020    000079ac   000079ac    r-x
-  00008020    00008020    000077a8   000077a8    r-x .text
-  0000f7c8    0000f7c8    00000204   00000204    r-- .const
+00008020    00008020    000079b4   000079b4    r-x
+  00008020    00008020    000077b0   000077b0    r-x .text
+  0000f7d0    0000f7d0    00000204   00000204    r-- .const
 08000800    08000800    00000104   00000000    rw-
   08000800    08000800    00000104   00000000    rw- .kernelBSS
 08001000    08001000    00002038   00000000    rw-
@@ -71,7 +71,7 @@ section   page    origin      length       input sections
                   00005238    00000008     rtsv7R4_T_be_v3D16_eabi.lib : memory.obj (.sysmem)
                   00005240    000007f8     --HOLE--
 
-.text      0    00008020    000077a8     
+.text      0    00008020    000077b0     
                   00008020    00002cdc     sys_selftest.obj (.text)
                   0000acfc    00000b28     system.obj (.text)
                   0000b824    00000a58     sys_vim.obj (.text)
@@ -97,19 +97,19 @@ section   page    origin      length       input sections
                   0000f5fc    0000006c                                 : copy_decompress_lzss.obj (.text:decompress:lzss)
                   0000f668    00000050                                 : exit.obj (.text)
                   0000f6b8    0000004c                                 : cpy_tbl.obj (.text)
-                  0000f704    00000044     sys_main.obj (.text)
-                  0000f748    00000034     blinky.obj (.text)
-                  0000f77c    00000016     rtsv7R4_T_be_v3D16_eabi.lib : strlen.obj (.text)
-                  0000f792    00000002     --HOLE-- [fill = 0]
-                  0000f794    00000014                                 : _lock.obj (.text)
-                  0000f7a8    0000000e                                 : copy_decompress_none.obj (.text:decompress:none)
-                  0000f7b6    0000000c                                 : copy_zero_init.obj (.text:decompress:ZI)
-                  0000f7c2    00000002     --HOLE-- [fill = 0]
-                  0000f7c4    00000004     sys_phantom.obj (.text:retain)
+                  0000f704    0000004c     sys_main.obj (.text)
+                  0000f750    00000034     blinky.obj (.text)
+                  0000f784    00000016     rtsv7R4_T_be_v3D16_eabi.lib : strlen.obj (.text)
+                  0000f79a    00000002     --HOLE-- [fill = 0]
+                  0000f79c    00000014                                 : _lock.obj (.text)
+                  0000f7b0    0000000e                                 : copy_decompress_none.obj (.text:decompress:none)
+                  0000f7be    0000000c                                 : copy_zero_init.obj (.text:decompress:ZI)
+                  0000f7ca    00000002     --HOLE-- [fill = 0]
+                  0000f7cc    00000004     sys_phantom.obj (.text:retain)
 
-.const     0    0000f7c8    00000204     
-                  0000f7c8    00000200     sys_vim.obj (.const:s_vim_init)
-                  0000f9c8    00000004     os_heap.obj (.const)
+.const     0    0000f7d0    00000204     
+                  0000f7d0    00000200     sys_vim.obj (.const:s_vim_init)
+                  0000f9d0    00000004     os_heap.obj (.const)
 
 .kernelBSS 
 *          0    08000800    00000104     UNINITIALIZED
@@ -159,11 +159,11 @@ MODULE SUMMARY
        notification.obj           524     0         0      
        dabort.obj                 232     0         0      
        sys_pmu.obj                224     0         0      
-       sys_main.obj               68      0         0      
+       sys_main.obj               76      0         0      
        sys_intvecs.obj            32      0         0      
        sys_phantom.obj            4       0         0      
     +--+--------------------------+-------+---------+---------+
-       Total:                     50896   516       8484   
+       Total:                     50904   516       8484   
                                                            
     C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib/rtsv7R4_T_be_v3D16_eabi.lib
        memcpy_t2.obj              156     0         0      
@@ -183,7 +183,7 @@ MODULE SUMMARY
        Heap:                      0       0         2048   
        Linker Generated:          0       89        0      
     +--+--------------------------+-------+---------+---------+
-       Grand Total:               51672   605       10556  
+       Grand Total:               51680   605       10556  
 
 
 LINKER GENERATED COPY TABLES
@@ -262,14 +262,14 @@ UNDEFED   SHT$$INIT_ARRAY$$Limit
 0000f58d  __TI_auto_init                        
 08003010  __TI_cleanup_ptr                      
 0000f5fd  __TI_decompress_lzss                  
-0000f7a9  __TI_decompress_none                  
+0000f7b1  __TI_decompress_none                  
 08003014  __TI_dtors_ptr                        
 08003018  __TI_enable_exit_profile_output       
 ffffffff  __TI_pprof_out_hndl                   
 ffffffff  __TI_prof_data_size                   
 ffffffff  __TI_prof_data_start                  
 00000000  __TI_static_base__                    
-0000f7b7  __TI_zero_init                        
+0000f7bf  __TI_zero_init                        
 0000f511  __aeabi_memclr                        
 0000f511  __aeabi_memclr4                       
 0000f511  __aeabi_memclr8                       
@@ -315,7 +315,7 @@ ffffffff  __c_args__
 0000e07c  _getCPSRValue_                        
 0000e084  _gotoCPUIdle_                         
 0800301c  _lock                                 
-0000f7a3  _nop                                  
+0000f7ab  _nop                                  
 0000f3f0  _pmuDisableCountersGlobal_            
 0000f3e0  _pmuEnableCountersGlobal_             
 0000f44c  _pmuGetCycleCount_                    
@@ -328,8 +328,8 @@ ffffffff  __c_args__
 0000f440  _pmuSetCountEvent_                    
 0000f430  _pmuStartCounters_                    
 0000f438  _pmuStopCounters_                     
-0000f79b  _register_lock                        
-0000f795  _register_unlock                      
+0000f7a3  _register_lock                        
+0000f79d  _register_unlock                      
 00005238  _sys_memory                           
 0000f58b  _system_post_cinit                    
 08003020  _unlock                               
@@ -338,7 +338,7 @@ ffffffff  __c_args__
 00009358  adc2ParityCheck                       
 0000eccc  adcNotification                       
 ffffffff  binit                                 
-0000f748  blinky                                
+0000f750  blinky                                
 00009410  can1ParityCheck                       
 000094e8  can2ParityCheck                       
 000095b0  can3ParityCheck                       
@@ -445,7 +445,7 @@ ffffffff  binit
 00008578  pbistStop                             
 0000135c  pcTaskGetName                         
 0000ade4  periphInit                            
-0000f7c4  phantomInterrupt                      
+0000f7cc  phantomInterrupt                      
 0000d0b8  pinmuxGetConfigValue                  
 00004a88  prvMpuDisable                         
 00004a70  prvMpuEnable                          
@@ -466,7 +466,7 @@ ffffffff  binit
 0000a5bc  stcGetConfigValue                     
 000081b8  stcSelfCheck                          
 00008df8  stcSelfCheckFail                      
-0000f77d  strlen                                
+0000f785  strlen                                
 0000b05c  systemGetConfigValue                  
 0000af60  systemInit                            
 0000b02c  systemPowerDown                       
@@ -906,14 +906,14 @@ address   name
 0000f675  exit                                  
 0000f6b9  copy_in                               
 0000f704  main                                  
-0000f748  blinky                                
-0000f77d  strlen                                
-0000f795  _register_unlock                      
-0000f79b  _register_lock                        
-0000f7a3  _nop                                  
-0000f7a9  __TI_decompress_none                  
-0000f7b7  __TI_zero_init                        
-0000f7c4  phantomInterrupt                      
+0000f750  blinky                                
+0000f785  strlen                                
+0000f79d  _register_unlock                      
+0000f7a3  _register_lock                        
+0000f7ab  _nop                                  
+0000f7b1  __TI_decompress_none                  
+0000f7bf  __TI_zero_init                        
+0000f7cc  phantomInterrupt                      
 080008d0  pxCurrentTCB                          
 08003010  __TI_cleanup_ptr                      
 08003014  __TI_dtors_ptr                        

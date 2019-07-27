@@ -72,8 +72,13 @@
 
 int main(void)
 {
-/* USER CODE BEGIN (3) */
+    gioInit();
+
+    /* USER CODE BEGIN (3) */
     xTaskCreate(blinky, "blinky", configMINIMAL_STACK_SIZE, NULL, BLINKY_TASK_DEFAULT_PRIORITY, &xBlinkyTaskHandle);
+
+    /* Start FreeRTOS Scheduler */
+    vTaskStartScheduler();
 
     while(1) {
         vTaskDelay(pdMS_TO_TICKS(1000));
