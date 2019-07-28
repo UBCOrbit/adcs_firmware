@@ -57,6 +57,7 @@
 #include "sys_core.h"
 #include "os_task.h"
 #include "task_priority.h"
+#include "uart.h"
 /* USER CODE END */
 
 /** @fn void main(void)
@@ -72,10 +73,12 @@
 
 int main(void)
 {
+/* USER CODE BEGIN (3) */
     gioInit();
+    uart_init();
 
-    /* USER CODE BEGIN (3) */
     xTaskCreate(blinky, "blinky", configMINIMAL_STACK_SIZE, NULL, BLINKY_TASK_DEFAULT_PRIORITY, &xBlinkyTaskHandle);
+    serial_send_ln("serial send worked!");
 
     /* Start FreeRTOS Scheduler */
     vTaskStartScheduler();
