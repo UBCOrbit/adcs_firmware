@@ -1,14 +1,14 @@
 /** @file sys_main.c 
 *   @brief Application main file
-*   @date 11-Dec-2018
-*   @version 04.07.01
+*   @date 07-July-2017
+*   @version 04.07.00
 *
 *   This file contains an empty main function,
 *   which can be used for the application.
 */
 
 /* 
-* Copyright (C) 2009-2018 Texas Instruments Incorporated - www.ti.com 
+* Copyright (C) 2009-2016 Texas Instruments Incorporated - www.ti.com 
 * 
 * 
 *  Redistribution and use in source and binary forms, with or without 
@@ -50,6 +50,14 @@
 #include "sys_common.h"
 
 /* USER CODE BEGIN (1) */
+#include "sys_common.h"
+#include "blinky.h"
+#include "gio.h"
+#include "FreeRTOS.h"
+#include "sys_core.h"
+#include "os_task.h"
+#include "task_priority.h"
+#include "uart.h"
 /* USER CODE END */
 
 /** @fn void main(void)
@@ -66,6 +74,21 @@
 int main(void)
 {
 /* USER CODE BEGIN (3) */
+    gioInit();
+    uart_init();
+
+    xTaskCreate(blinky, "blinky", configMINIMAL_STACK_SIZE, NULL, BLINKY_TASK_DEFAULT_PRIORITY, &xBlinkyTaskHandle);
+    serial_send_ln("serial send worked!");
+
+    /* Start FreeRTOS Scheduler */
+    vTaskStartScheduler();
+
+    while(1) {
+        vTaskDelay(pdMS_TO_TICKS(1000));
+    }
+
+//    vTaskStartScheduler();
+
 /* USER CODE END */
 
     return 0;

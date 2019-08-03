@@ -111,8 +111,11 @@ PDE_DEPS__QUOTED :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+adcs/hardware-drivers/imu \
 adcs/hardware-drivers/magnetorquers \
 adcs/hardware-drivers/temperature \
+adcs/interfaces \
+adcs/system \
 platform-1224-launchpad/source \
 third-party/matrix_math \
 

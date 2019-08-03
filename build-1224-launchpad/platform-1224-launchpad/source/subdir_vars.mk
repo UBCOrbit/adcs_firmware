@@ -10,6 +10,7 @@ CMD_SRCS += \
 
 ASM_SRCS += \
 ../platform-1224-launchpad/source/dabort.asm \
+../platform-1224-launchpad/source/os_portasm.asm \
 ../platform-1224-launchpad/source/sys_core.asm \
 ../platform-1224-launchpad/source/sys_intvecs.asm \
 ../platform-1224-launchpad/source/sys_mpu.asm \
@@ -22,7 +23,6 @@ C_SRCS += \
 ../platform-1224-launchpad/source/dcc.c \
 ../platform-1224-launchpad/source/ecap.c \
 ../platform-1224-launchpad/source/eqep.c \
-../platform-1224-launchpad/source/errata_SSWF021_45.c \
 ../platform-1224-launchpad/source/esm.c \
 ../platform-1224-launchpad/source/etpwm.c \
 ../platform-1224-launchpad/source/gio.c \
@@ -31,8 +31,16 @@ C_SRCS += \
 ../platform-1224-launchpad/source/lin.c \
 ../platform-1224-launchpad/source/mibspi.c \
 ../platform-1224-launchpad/source/notification.c \
+../platform-1224-launchpad/source/os_croutine.c \
+../platform-1224-launchpad/source/os_event_groups.c \
+../platform-1224-launchpad/source/os_heap.c \
+../platform-1224-launchpad/source/os_list.c \
+../platform-1224-launchpad/source/os_mpu_wrappers.c \
+../platform-1224-launchpad/source/os_port.c \
+../platform-1224-launchpad/source/os_queue.c \
+../platform-1224-launchpad/source/os_tasks.c \
+../platform-1224-launchpad/source/os_timer.c \
 ../platform-1224-launchpad/source/pinmux.c \
-../platform-1224-launchpad/source/rti.c \
 ../platform-1224-launchpad/source/sci.c \
 ../platform-1224-launchpad/source/spi.c \
 ../platform-1224-launchpad/source/sys_dma.c \
@@ -52,7 +60,6 @@ C_DEPS += \
 ./platform-1224-launchpad/source/dcc.d \
 ./platform-1224-launchpad/source/ecap.d \
 ./platform-1224-launchpad/source/eqep.d \
-./platform-1224-launchpad/source/errata_SSWF021_45.d \
 ./platform-1224-launchpad/source/esm.d \
 ./platform-1224-launchpad/source/etpwm.d \
 ./platform-1224-launchpad/source/gio.d \
@@ -61,8 +68,16 @@ C_DEPS += \
 ./platform-1224-launchpad/source/lin.d \
 ./platform-1224-launchpad/source/mibspi.d \
 ./platform-1224-launchpad/source/notification.d \
+./platform-1224-launchpad/source/os_croutine.d \
+./platform-1224-launchpad/source/os_event_groups.d \
+./platform-1224-launchpad/source/os_heap.d \
+./platform-1224-launchpad/source/os_list.d \
+./platform-1224-launchpad/source/os_mpu_wrappers.d \
+./platform-1224-launchpad/source/os_port.d \
+./platform-1224-launchpad/source/os_queue.d \
+./platform-1224-launchpad/source/os_tasks.d \
+./platform-1224-launchpad/source/os_timer.d \
 ./platform-1224-launchpad/source/pinmux.d \
-./platform-1224-launchpad/source/rti.d \
 ./platform-1224-launchpad/source/sci.d \
 ./platform-1224-launchpad/source/spi.d \
 ./platform-1224-launchpad/source/sys_dma.d \
@@ -83,7 +98,6 @@ OBJS += \
 ./platform-1224-launchpad/source/dcc.obj \
 ./platform-1224-launchpad/source/ecap.obj \
 ./platform-1224-launchpad/source/eqep.obj \
-./platform-1224-launchpad/source/errata_SSWF021_45.obj \
 ./platform-1224-launchpad/source/esm.obj \
 ./platform-1224-launchpad/source/etpwm.obj \
 ./platform-1224-launchpad/source/gio.obj \
@@ -92,8 +106,17 @@ OBJS += \
 ./platform-1224-launchpad/source/lin.obj \
 ./platform-1224-launchpad/source/mibspi.obj \
 ./platform-1224-launchpad/source/notification.obj \
+./platform-1224-launchpad/source/os_croutine.obj \
+./platform-1224-launchpad/source/os_event_groups.obj \
+./platform-1224-launchpad/source/os_heap.obj \
+./platform-1224-launchpad/source/os_list.obj \
+./platform-1224-launchpad/source/os_mpu_wrappers.obj \
+./platform-1224-launchpad/source/os_port.obj \
+./platform-1224-launchpad/source/os_portasm.obj \
+./platform-1224-launchpad/source/os_queue.obj \
+./platform-1224-launchpad/source/os_tasks.obj \
+./platform-1224-launchpad/source/os_timer.obj \
 ./platform-1224-launchpad/source/pinmux.obj \
-./platform-1224-launchpad/source/rti.obj \
 ./platform-1224-launchpad/source/sci.obj \
 ./platform-1224-launchpad/source/spi.obj \
 ./platform-1224-launchpad/source/sys_core.obj \
@@ -112,6 +135,7 @@ OBJS += \
 
 ASM_DEPS += \
 ./platform-1224-launchpad/source/dabort.d \
+./platform-1224-launchpad/source/os_portasm.d \
 ./platform-1224-launchpad/source/sys_core.d \
 ./platform-1224-launchpad/source/sys_intvecs.d \
 ./platform-1224-launchpad/source/sys_mpu.d \
@@ -125,7 +149,6 @@ OBJS__QUOTED += \
 "platform-1224-launchpad\source\dcc.obj" \
 "platform-1224-launchpad\source\ecap.obj" \
 "platform-1224-launchpad\source\eqep.obj" \
-"platform-1224-launchpad\source\errata_SSWF021_45.obj" \
 "platform-1224-launchpad\source\esm.obj" \
 "platform-1224-launchpad\source\etpwm.obj" \
 "platform-1224-launchpad\source\gio.obj" \
@@ -134,8 +157,17 @@ OBJS__QUOTED += \
 "platform-1224-launchpad\source\lin.obj" \
 "platform-1224-launchpad\source\mibspi.obj" \
 "platform-1224-launchpad\source\notification.obj" \
+"platform-1224-launchpad\source\os_croutine.obj" \
+"platform-1224-launchpad\source\os_event_groups.obj" \
+"platform-1224-launchpad\source\os_heap.obj" \
+"platform-1224-launchpad\source\os_list.obj" \
+"platform-1224-launchpad\source\os_mpu_wrappers.obj" \
+"platform-1224-launchpad\source\os_port.obj" \
+"platform-1224-launchpad\source\os_portasm.obj" \
+"platform-1224-launchpad\source\os_queue.obj" \
+"platform-1224-launchpad\source\os_tasks.obj" \
+"platform-1224-launchpad\source\os_timer.obj" \
 "platform-1224-launchpad\source\pinmux.obj" \
-"platform-1224-launchpad\source\rti.obj" \
 "platform-1224-launchpad\source\sci.obj" \
 "platform-1224-launchpad\source\spi.obj" \
 "platform-1224-launchpad\source\sys_core.obj" \
@@ -159,7 +191,6 @@ C_DEPS__QUOTED += \
 "platform-1224-launchpad\source\dcc.d" \
 "platform-1224-launchpad\source\ecap.d" \
 "platform-1224-launchpad\source\eqep.d" \
-"platform-1224-launchpad\source\errata_SSWF021_45.d" \
 "platform-1224-launchpad\source\esm.d" \
 "platform-1224-launchpad\source\etpwm.d" \
 "platform-1224-launchpad\source\gio.d" \
@@ -168,8 +199,16 @@ C_DEPS__QUOTED += \
 "platform-1224-launchpad\source\lin.d" \
 "platform-1224-launchpad\source\mibspi.d" \
 "platform-1224-launchpad\source\notification.d" \
+"platform-1224-launchpad\source\os_croutine.d" \
+"platform-1224-launchpad\source\os_event_groups.d" \
+"platform-1224-launchpad\source\os_heap.d" \
+"platform-1224-launchpad\source\os_list.d" \
+"platform-1224-launchpad\source\os_mpu_wrappers.d" \
+"platform-1224-launchpad\source\os_port.d" \
+"platform-1224-launchpad\source\os_queue.d" \
+"platform-1224-launchpad\source\os_tasks.d" \
+"platform-1224-launchpad\source\os_timer.d" \
 "platform-1224-launchpad\source\pinmux.d" \
-"platform-1224-launchpad\source\rti.d" \
 "platform-1224-launchpad\source\sci.d" \
 "platform-1224-launchpad\source\spi.d" \
 "platform-1224-launchpad\source\sys_dma.d" \
@@ -184,6 +223,7 @@ C_DEPS__QUOTED += \
 
 ASM_DEPS__QUOTED += \
 "platform-1224-launchpad\source\dabort.d" \
+"platform-1224-launchpad\source\os_portasm.d" \
 "platform-1224-launchpad\source\sys_core.d" \
 "platform-1224-launchpad\source\sys_intvecs.d" \
 "platform-1224-launchpad\source\sys_mpu.d" \
@@ -196,7 +236,6 @@ C_SRCS__QUOTED += \
 "../platform-1224-launchpad/source/dcc.c" \
 "../platform-1224-launchpad/source/ecap.c" \
 "../platform-1224-launchpad/source/eqep.c" \
-"../platform-1224-launchpad/source/errata_SSWF021_45.c" \
 "../platform-1224-launchpad/source/esm.c" \
 "../platform-1224-launchpad/source/etpwm.c" \
 "../platform-1224-launchpad/source/gio.c" \
@@ -205,8 +244,16 @@ C_SRCS__QUOTED += \
 "../platform-1224-launchpad/source/lin.c" \
 "../platform-1224-launchpad/source/mibspi.c" \
 "../platform-1224-launchpad/source/notification.c" \
+"../platform-1224-launchpad/source/os_croutine.c" \
+"../platform-1224-launchpad/source/os_event_groups.c" \
+"../platform-1224-launchpad/source/os_heap.c" \
+"../platform-1224-launchpad/source/os_list.c" \
+"../platform-1224-launchpad/source/os_mpu_wrappers.c" \
+"../platform-1224-launchpad/source/os_port.c" \
+"../platform-1224-launchpad/source/os_queue.c" \
+"../platform-1224-launchpad/source/os_tasks.c" \
+"../platform-1224-launchpad/source/os_timer.c" \
 "../platform-1224-launchpad/source/pinmux.c" \
-"../platform-1224-launchpad/source/rti.c" \
 "../platform-1224-launchpad/source/sci.c" \
 "../platform-1224-launchpad/source/spi.c" \
 "../platform-1224-launchpad/source/sys_dma.c" \
@@ -221,6 +268,7 @@ C_SRCS__QUOTED += \
 
 ASM_SRCS__QUOTED += \
 "../platform-1224-launchpad/source/dabort.asm" \
+"../platform-1224-launchpad/source/os_portasm.asm" \
 "../platform-1224-launchpad/source/sys_core.asm" \
 "../platform-1224-launchpad/source/sys_intvecs.asm" \
 "../platform-1224-launchpad/source/sys_mpu.asm" \

@@ -2,12 +2,12 @@
 <SETTINGS>
   <DEVICE>
     <family>TMS570LS12x</family>
-    <device>TMS570LS1224PGE</device>
+    <device>TMS570LS1224PGE_FREERTOS</device>
     <dilfile>platform-1224-launchpad.dil</dilfile>
     <tools>ti</tools>
   </DEVICE>
   <VERSION>
-    <version>04.07.01</version>
+    <version>04.06.00</version>
   </VERSION>
   <HET1>
     <FILENAME>
@@ -182,18 +182,78 @@
       <HDRTEST>
         <NAME>HL_Test.h</NAME>
       </HDRTEST>
-      <SSWFHDRERRATA>
-        <NAME>errata_SSWF021_45.h</NAME>
-        <PATH>include\errata_SSWF021_45.h</PATH>
-      </SSWFHDRERRATA>
-      <SSWFHDREGERRATA>
-        <NAME>errata_SSWF021_45_defs.h</NAME>
-        <PATH>include\errata_SSWF021_45_defs.h</PATH>
-      </SSWFHDREGERRATA>
-      <SSWFSRCERRATA>
-        <NAME>errata_SSWF021_45.c</NAME>
-        <PATH>source\errata_SSWF021_45.c</PATH>
-      </SSWFSRCERRATA>
+      <HDRPROJDEFS>
+        <NAME>os_projdefs.h</NAME>
+      </HDRPROJDEFS>
+      <HDRCONFIG>
+        <NAME>FreeRTOSConfig.h</NAME>
+      </HDRCONFIG>
+      <HDRPORT>
+        <NAME>os_portmacro.h</NAME>
+      </HDRPORT>
+      <HDRMPUWRAPPER>
+        <NAME>os_mpu_wrappers.h</NAME>
+      </HDRMPUWRAPPER>
+      <HDRPORTABLE>
+        <NAME>os_portable.h</NAME>
+      </HDRPORTABLE>
+      <HDRMAIN>
+        <NAME>FreeRTOS.h</NAME>
+      </HDRMAIN>
+      <HDRLIST>
+        <NAME>os_list.h</NAME>
+      </HDRLIST>
+      <HDRQUEUE>
+        <NAME>os_queue.h</NAME>
+      </HDRQUEUE>
+      <HDRSEMPHR>
+        <NAME>os_semphr.h</NAME>
+      </HDRSEMPHR>
+      <HDRCOROUTINE>
+        <NAME>os_croutine.h</NAME>
+      </HDRCOROUTINE>
+      <HDRSTACK>
+        <NAME>os_StackMacros.h</NAME>
+      </HDRSTACK>
+      <HDRTASK>
+        <NAME>os_task.h</NAME>
+      </HDRTASK>
+      <HDRTIMER>
+        <NAME>os_timer.h</NAME>
+      </HDRTIMER>
+      <SRCPORT>
+        <NAME>os_port.c</NAME>
+      </SRCPORT>
+      <SRCASMPORT>
+        <NAME>os_portasm.asm</NAME>
+      </SRCASMPORT>
+      <SRCTASK>
+        <NAME>os_tasks.c</NAME>
+      </SRCTASK>
+      <SRCQUEUE>
+        <NAME>os_queue.c</NAME>
+      </SRCQUEUE>
+      <SRCLIST>
+        <NAME>os_list.c</NAME>
+      </SRCLIST>
+      <SRCCOROUTINE>
+        <NAME>os_croutine.c</NAME>
+      </SRCCOROUTINE>
+      <SRCTIMER>
+        <NAME>os_timer.c</NAME>
+      </SRCTIMER>
+      <SRCMPUWRAPPER>
+        <NAME>os_mpu_wrappers.c</NAME>
+      </SRCMPUWRAPPER>
+      <SRCHEAP>
+        <NAME>os_heap.c</NAME>
+      </SRCHEAP>
+      <SRCEVNTGRP>
+        <NAME>os_event_groups.c</NAME>
+      </SRCEVNTGRP>
+      <HDREVNTGRP>
+        <NAME>os_event_groups.h</NAME>
+      </HDREVNTGRP>
       <HDRMUX_R>
         <NAME>reg_pinmux.h</NAME>
       </HDRMUX_R>
@@ -209,9 +269,7 @@
       <HDRRTI>
         <NAME>rti.h</NAME>
       </HDRRTI>
-      <SRCRTI>
-        <NAME>rti.c</NAME>
-      </SRCRTI>
+      <SRCRTI/>
       <HDRGIO_R>
         <NAME>reg_gio.h</NAME>
       </HDRGIO_R>
@@ -237,8 +295,7 @@
         <NAME>lin.h</NAME>
       </HDRLIN>
       <SRCLIN>
-        <NAME>lin.c</NAME>
-      </SRCLIN>
+        </SRCLIN>
       <HDRMIBSPI_R>
         <NAME>reg_mibspi.h</NAME>
       </HDRMIBSPI_R>
@@ -410,6 +467,82 @@
       <SRC16FEE/>
     </FILENAMES>
   </SYSTEM>
+  <OS>
+    <FILENAMES>
+      <HDRPROJDEFS>
+        <PATH>include\os_projdefs.h</PATH>
+      </HDRPROJDEFS>
+      <HDRCONFIG>
+        <PATH>include\FreeRTOSConfig.h</PATH>
+      </HDRCONFIG>
+      <HDRPORT>
+        <PATH>include\os_portmacro.h</PATH>
+      </HDRPORT>
+      <HDRMPUWRAPPER>
+        <PATH>include\os_mpu_wrappers.h</PATH>
+      </HDRMPUWRAPPER>
+      <HDRPORTABLE>
+        <PATH>include\os_portable.h</PATH>
+      </HDRPORTABLE>
+      <HDRMAIN>
+        <PATH>include\FreeRTOS.h</PATH>
+      </HDRMAIN>
+      <HDRLIST>
+        <PATH>include\os_list.h</PATH>
+      </HDRLIST>
+      <HDRQUEUE>
+        <PATH>include\os_queue.h</PATH>
+      </HDRQUEUE>
+      <HDRSEMPHR>
+        <PATH>include\os_semphr.h</PATH>
+      </HDRSEMPHR>
+      <HDRCOROUTINE>
+        <PATH>include\os_croutine.h</PATH>
+      </HDRCOROUTINE>
+      <HDRSTACK>
+        <PATH>include\os_StackMacros.h</PATH>
+      </HDRSTACK>
+      <HDRTASK>
+        <PATH>include\os_task.h</PATH>
+      </HDRTASK>
+      <HDRTIMER>
+        <PATH>include\os_timer.h</PATH>
+      </HDRTIMER>
+      <SRCPORT>
+        <PATH>source\os_port.c</PATH>
+      </SRCPORT>
+      <SRCASMPORT>
+        <PATH>source\os_portasm.asm</PATH>
+      </SRCASMPORT>
+      <SRCTASK>
+        <PATH>source\os_tasks.c</PATH>
+      </SRCTASK>
+      <SRCQUEUE>
+        <PATH>source\os_queue.c</PATH>
+      </SRCQUEUE>
+      <SRCLIST>
+        <PATH>source\os_list.c</PATH>
+      </SRCLIST>
+      <SRCCOROUTINE>
+        <PATH>source\os_croutine.c</PATH>
+      </SRCCOROUTINE>
+      <SRCTIMER>
+        <PATH>source\os_timer.c</PATH>
+      </SRCTIMER>
+      <SRCMPUWRAPPER>
+        <PATH>source\os_mpu_wrappers.c</PATH>
+      </SRCMPUWRAPPER>
+      <SRCHEAP>
+        <PATH>source\os_heap.c</PATH>
+      </SRCHEAP>
+      <SRCEVNTGRP>
+        <PATH>source\os_event_groups.c</PATH>
+      </SRCEVNTGRP>
+      <HDREVNTGRP>
+        <PATH>include\os_event_groups.h</PATH>
+      </HDREVNTGRP>
+    </FILENAMES>
+  </OS>
   <PINMUX>
     <FILENAMES>
       <HDRMUX_R>
@@ -432,7 +565,7 @@
         <PATH>include\rti.h</PATH>
       </HDRRTI>
       <SRCRTI>
-        <PATH>source\rti.c</PATH>
+        <PATH/>
       </SRCRTI>
     </FILENAMES>
   </RTI>
@@ -471,7 +604,7 @@
         <PATH>include\lin.h</PATH>
       </HDRLIN>
       <SRCLIN>
-        <PATH>source\lin.c</PATH>
+        <PATH></PATH>
       </SRCLIN>
     </FILENAMES>
   </LIN>

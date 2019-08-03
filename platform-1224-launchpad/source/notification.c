@@ -1,7 +1,7 @@
 /** @file notification.c 
 *   @brief User Notification Definition File
-*   @date 11-Dec-2018
-*   @version 04.07.01
+*   @date 07-July-2017
+*   @version 04.07.00
 *
 *   This file  defines  empty  notification  routines to avoid
 *   linker errors, Driver expects user to define the notification. 
@@ -12,7 +12,7 @@
 */
 
 /* 
-* Copyright (C) 2009-2018 Texas Instruments Incorporated - www.ti.com 
+* Copyright (C) 2009-2016 Texas Instruments Incorporated - www.ti.com 
 * 
 * 
 *  Redistribution and use in source and binary forms, with or without 
@@ -53,12 +53,10 @@
 #include "adc.h"
 #include "can.h"
 #include "gio.h"
-#include "lin.h"
 #include "mibspi.h"
 #include "sci.h"
 #include "spi.h"
 #include "het.h"
-#include "rti.h"
 #include "dcc.h"
 #include "i2c.h"
 #include "crc.h"
@@ -108,16 +106,6 @@ void memoryPort1TestFailNotification(uint32 groupSelect, uint32 dataSelect, uint
 }
 
 /* USER CODE BEGIN (8) */
-/* USER CODE END */
-#pragma WEAK(rtiNotification)
-void rtiNotification(uint32 notification)
-{
-/*  enter user code between the USER CODE BEGIN and USER CODE END. */
-/* USER CODE BEGIN (9) */
-/* USER CODE END */
-}
-
-/* USER CODE BEGIN (10) */
 /* USER CODE END */
 #pragma WEAK(adcNotification)
 void adcNotification(adcBASE_t *adc, uint32 group)
@@ -184,16 +172,6 @@ void i2cNotification(i2cBASE_t *i2c, uint32 flags)
 }
 
 /* USER CODE BEGIN (22) */
-/* USER CODE END */
-#pragma WEAK(linNotification)
-void linNotification(linBASE_t *lin, uint32 flags)      
-{
-/*  enter user code between the USER CODE BEGIN and USER CODE END. */
-/* USER CODE BEGIN (23) */
-/* USER CODE END */
-}
-
-/* USER CODE BEGIN (24) */
 /* USER CODE END */
 #pragma WEAK(mibspiNotification)
 void mibspiNotification(mibspiBASE_t *mibspi, uint32 flags)

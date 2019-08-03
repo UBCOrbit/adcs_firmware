@@ -1,7 +1,7 @@
 /** @file sys_vim.h
 *   @brief Vectored Interrupt Module Header File
-*   @date 11-Dec-2018
-*   @version 04.07.01
+*   @date 07-July-2017
+*   @version 04.07.00
 *   
 *   This file contains:
 *   - VIM Type Definitions
@@ -11,7 +11,7 @@
 */
 
 /* 
-* Copyright (C) 2009-2018 Texas Instruments Incorporated - www.ti.com  
+* Copyright (C) 2009-2016 Texas Instruments Incorporated - www.ti.com  
 * 
 * 
 *  Redistribution and use in source and binary forms, with or without 
@@ -90,6 +90,8 @@ typedef enum systemInterrupt
 
 extern void esmHighInterrupt(void);
 extern void phantomInterrupt(void);
+extern void vPortPreemptiveTick(void);
+extern void vPortYeildWithinAPI(void);
 
 /* USER CODE BEGIN (3) */
 /* USER CODE END */
@@ -256,7 +258,7 @@ typedef struct vim_config_reg
 					
 #define VIM_REQMASKSET0_CONFIGVALUE	( (uint32)((uint32)1U << 0U)\
                                     | (uint32)((uint32)1U << 1U)\
-                                    | (uint32)((uint32)0U << 2U)\
+                                    | (uint32)((uint32)1U << 2U)\
                                     | (uint32)((uint32)0U << 3U)\
                                     | (uint32)((uint32)0U << 4U)\
                                     | (uint32)((uint32)0U << 5U)\
@@ -275,7 +277,7 @@ typedef struct vim_config_reg
                                     | (uint32)((uint32)0U << 18U)\
                                     | (uint32)((uint32)0U << 19U)\
                                     | (uint32)((uint32)0U << 20U)\
-                                    | (uint32)((uint32)0U << 21U)\
+                                    | (uint32)((uint32)1U << 21U)\
                                     | (uint32)((uint32)0U << 22U)\
                                     | (uint32)((uint32)0U << 23U)\
                                     | (uint32)((uint32)0U << 24U)\

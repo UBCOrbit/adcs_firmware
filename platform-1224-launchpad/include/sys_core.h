@@ -1,7 +1,7 @@
 /** @file sys_core.h
 *   @brief System Core Header File
-*   @date 11-Dec-2018
-*   @version 04.07.01
+*   @date 07-July-2017
+*   @version 04.07.00
 *   
 *   This file contains:
 *   - Core Interface Functions
@@ -10,7 +10,7 @@
 */
 
 /* 
-* Copyright (C) 2009-2018 Texas Instruments Incorporated - www.ti.com 
+* Copyright (C) 2009-2016 Texas Instruments Incorporated - www.ti.com 
 * 
 * 
 *  Redistribution and use in source and binary forms, with or without 
@@ -63,7 +63,7 @@ extern "C" {
 *
 *	@note: Use this macro for USER Mode Stack length (in bytes)
 */
-#define USER_STACK_LENGTH   0x00001000U
+#define USER_STACK_LENGTH   0x00000300U
 
 /** @def SVC_STACK_LENGTH
 *   @brief SVC Mode Stack length (in bytes)

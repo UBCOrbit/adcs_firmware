@@ -6,33 +6,27 @@ SHELL = cmd.exe
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../adcs/interfaces/adcs_adc.c \
-../adcs/interfaces/adcs_uart.c \
-../adcs/interfaces/adcs_utils.c 
+../adcs/interfaces/gpio_interrupt.c \
+../adcs/interfaces/uart.c 
 
 C_DEPS += \
-./adcs/interfaces/adcs_adc.d \
-./adcs/interfaces/adcs_uart.d \
-./adcs/interfaces/adcs_utils.d 
+./adcs/interfaces/gpio_interrupt.d \
+./adcs/interfaces/uart.d 
 
 OBJS += \
-./adcs/interfaces/adcs_adc.obj \
-./adcs/interfaces/adcs_uart.obj \
-./adcs/interfaces/adcs_utils.obj 
+./adcs/interfaces/gpio_interrupt.obj \
+./adcs/interfaces/uart.obj 
 
 OBJS__QUOTED += \
-"adcs\interfaces\adcs_adc.obj" \
-"adcs\interfaces\adcs_uart.obj" \
-"adcs\interfaces\adcs_utils.obj" 
+"adcs\interfaces\gpio_interrupt.obj" \
+"adcs\interfaces\uart.obj" 
 
 C_DEPS__QUOTED += \
-"adcs\interfaces\adcs_adc.d" \
-"adcs\interfaces\adcs_uart.d" \
-"adcs\interfaces\adcs_utils.d" 
+"adcs\interfaces\gpio_interrupt.d" \
+"adcs\interfaces\uart.d" 
 
 C_SRCS__QUOTED += \
-"../adcs/interfaces/adcs_adc.c" \
-"../adcs/interfaces/adcs_uart.c" \
-"../adcs/interfaces/adcs_utils.c" 
+"../adcs/interfaces/gpio_interrupt.c" \
+"../adcs/interfaces/uart.c" 
 
 

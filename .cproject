@@ -117,6 +117,7 @@
 								<option id="com.ti.ccstudio.buildDefinitions.TMS470_16.9.compilerID.ENUM_TYPE.308131046" name="Designate enum type (--enum_type)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_16.9.compilerID.ENUM_TYPE" value="com.ti.ccstudio.buildDefinitions.TMS470_16.9.compilerID.ENUM_TYPE.packed" valueType="enumerated"/>
 								<option id="com.ti.ccstudio.buildDefinitions.TMS470_16.9.compilerID.INCLUDE_PATH.811195419" name="Add dir to #include search path (--include_path, -I)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_16.9.compilerID.INCLUDE_PATH" valueType="includePath">
 									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}/platform-1224-launchpad/include}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}/adcs}"/>
 									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}/adcs/hardware-drivers}"/>
 									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}/third-party}"/>
 									<listOptionValue builtIn="false" value="${workspace_loc:/${ProjName}/platform-1224-launchpad/source}"/>
