@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
+encoding//build-1224-launchpad/adcs/hardware-drivers/imu/subdir_rules.mk=UTF-8
+encoding//build-1224-launchpad/adcs/hardware-drivers/imu/subdir_vars.mk=UTF-8
 encoding//build-1224-launchpad/adcs/hardware-drivers/magnetorquers/subdir_rules.mk=UTF-8
 encoding//build-1224-launchpad/adcs/hardware-drivers/magnetorquers/subdir_vars.mk=UTF-8
 encoding//build-1224-launchpad/adcs/hardware-drivers/temperature/subdir_rules.mk=UTF-8
